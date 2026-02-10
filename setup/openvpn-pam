@@ -1,0 +1,3 @@
+auth    required    pam_google_authenticator.so secret=/etc/google-auth/${USER} user=root
+auth    sufficient  pam_unix.so nullok try_first_pass
+account required     pam_permit.so

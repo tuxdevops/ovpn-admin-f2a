@@ -113,9 +113,7 @@ if [ ${OVPN_2FA} = "true" ]; then
   fi
   
   if [ ! -f "/etc/pam.d/openvpn" ]; then
-    bash -c 'cat > /etc/pam.d/openvpn <<EOF
-    auth    requisite       /usr/local/lib/security/pam_google_authenticator.so secret=/etc/google-auth/\${USER}  user=root
-    account    required     pam_permit.so'
+    cp -f /etc/openvpn/setup/openvpn-pam /etc/pam.d/openvpn
   fi
   
   if [ ! -f "/etc/openvpn/google-auth.sh" ]; then

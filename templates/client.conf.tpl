@@ -22,6 +22,8 @@ remote-cert-tls server
 
 {{- if .PasswdAuth }}
 auth-user-pass
+auth-nocache
+reneg-sec 0
 {{- end }}
 
 <cert>
